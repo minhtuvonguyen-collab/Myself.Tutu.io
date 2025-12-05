@@ -1,1 +1,665 @@
-# Myself.Tutu.io
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Võ Nguyễn Minh Tú — Trang cá nhân</title>
+  <meta name="description" content="Trang cá nhân của Võ Nguyễn Minh Tú - Học sinh lớp 12 Anh, THPT Chuyên Bến Tre" />
+  <style>
+    :root{
+      --bg: #0f172a;
+      --card: #0b1220;
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --muted: #94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.06);
+      --text-light: #e6eef8;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent 8%),
+        linear-gradient(180deg, #020617 0%, #07112a 100%);
+      color:var(--text-light);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* Header with background image (requirement 1) */
+    header.site-header{
+      position:relative;
+      padding:36px 20px;
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--text-light);
+      overflow:hidden;
+    }
+    header.site-header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: url("https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/2100d3a9-cea5-4f46-863c-35b756e712a8.png?raw=true");
+      background-size:cover;
+      background-position:center;
+      filter:brightness(0.45) contrast(1.05) saturate(1.05);
+      transform:scale(1.03);
+      z-index:0;
+      transition: transform .8s ease;
+    }
+    header.site-header:hover::before{ transform:scale(1.06) }
+    header .header-inner{
+      position:relative;
+      z-index:2;
+      max-width:1100px;
+      width:100%;
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    /* Logo / title left */
+    .brand{
+      flex:1;
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .brand .logo{
+      width:72px;
+      height:72px;
+      border-radius:12px;
+      overflow:hidden;
+      border:2px solid rgba(255,255,255,0.12);
+      box-shadow:0 8px 24px rgba(2,6,23,0.6);
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+      color:white;
+    }
+    .brand .title{
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+    .brand .subtitle{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    /* Nav */
+    nav.main-nav{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      z-index:3;
+    }
+    nav.main-nav a{
+      color:var(--text-light);
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      transition: all .18s ease;
+      font-size:14px;
+      color:rgba(235,241,255,0.95);
+    }
+    nav.main-nav a:hover{ background:rgba(255,255,255,0.04); transform:translateY(-3px) }
+    nav.main-nav a.active{
+      background:linear-gradient(90deg, rgba(124,58,237,0.15), rgba(6,182,212,0.07));
+      box-shadow:0 6px 18px rgba(7,10,30,0.5);
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    /* Mobile menu */
+    .hamburger{
+      display:none;
+      width:44px;height:44px;
+      border-radius:10px;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    /* Main content container */
+    .container{
+      max-width:1100px;
+      margin: -60px auto 80px;
+      padding: 20px;
+    }
+
+    /* Card / section common */
+    section.card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      margin-bottom:24px;
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Home layout */
+    .home{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      padding:18px;
+      flex-wrap:wrap;
+    }
+    .home .hero-photo{
+      width:280px;
+      min-width:180px;
+      height:280px;
+      border-radius:14px;
+      overflow:hidden;
+      border:6px solid rgba(255,255,255,0.04);
+      box-shadow: 0 18px 40px rgba(7,10,30,0.7);
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      flex-shrink:0;
+      position:relative;
+      transform:translateY(0);
+      transition: transform .6s cubic-bezier(.2,.9,.3,1);
+    }
+    .home .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:contrast(1.02) saturate(1.05);
+    }
+    .home .intro{
+      flex:1;
+      min-width:260px;
+    }
+    .intro h1{
+      margin:0 0 6px;
+      font-size:26px;
+      letter-spacing:0.2px;
+    }
+    .intro p.lead{
+      margin:0 0 12px;
+      font-size:15px;
+      color:var(--muted);
+    }
+    .intro .cta{
+      display:flex;
+      gap:10px;
+      margin-top:12px;
+    }
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border: none;
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      box-shadow: 0 8px 20px rgba(124,58,237,0.18);
+      transition: transform .15s ease;
+    }
+    .btn.secondary{
+      background: transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--text-light);
+      box-shadow:none;
+    }
+    .btn:active{ transform:translateY(1px) }
+    .home .meta-cards{
+      display:flex;
+      gap:12px;
+      margin-top:16px;
+      flex-wrap:wrap;
+    }
+    .meta-card{
+      background:var(--glass);
+      padding:10px 12px;
+      border-radius:10px;
+      min-width:140px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .meta-card strong{ display:block; font-size:13px }
+    .meta-card span{ color:var(--muted); font-size:13px }
+
+    /* Two-column for sections like Về tôi */
+    .two-col{
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:22px;
+      align-items:start;
+    }
+    .two-col .photo{
+      width:100%;
+      height:100%;
+      border-radius:12px;
+      overflow:hidden;
+      border:5px solid rgba(255,255,255,0.03);
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    }
+    .two-col .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* Lists and small elements */
+    ul.clean{ padding-left:18px; margin:8px 0; color:var(--muted) }
+    .small-muted{ color:var(--muted); font-size:14px }
+
+    /* Audio list */
+    .audio-list{ display:flex; flex-direction:column; gap:10px; margin-top:10px }
+    .audio-item{
+      display:flex; gap:12px; align-items:center;
+      background:var(--glass-2); padding:10px; border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .audio-item .title{ font-weight:600; font-size:14px }
+
+    /* Contact icons */
+    .contact-grid{ display:flex; gap:12px; flex-wrap:wrap }
+    .contact-card{
+      display:flex; gap:12px; align-items:center;
+      padding:10px 12px; border-radius:12px; background:var(--glass-2);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .icon{
+      width:40px;height:40px;border-radius:10px;
+      display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:white;font-weight:700;
+    }
+
+    footer.site-footer{
+      max-width:1100px;margin:20px auto 60px;padding:20px;
+      display:flex;gap:12px;align-items:center;justify-content:space-between;
+      color:var(--muted); font-size:14px;
+    }
+    footer .footer-left{ color:var(--muted) }
+    .back-btn{
+      background:transparent;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+      color:var(--text-light); text-decoration:none; display:inline-flex; gap:8px; align-items:center;
+      transition: all .15s ease;
+    }
+    .back-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(7,10,30,0.5) }
+
+    /* Responsive */
+    @media(max-width:880px){
+      .two-col{ grid-template-columns: 1fr; }
+      .home{ flex-direction:column; align-items:flex-start }
+      header .header-inner{ flex-direction:column; align-items:flex-start; gap:12px }
+      nav.main-nav{ display:none }
+      .hamburger{ display:flex }
+      .container{ margin-top:-40px }
+    }
+    /* small screen tweaks */
+    @media(max-width:520px){
+      .brand .title{ font-size:16px }
+      .home .hero-photo{ width:100%; height:220px }
+    }
+
+    /* smooth scrolling */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MT</div>
+        <div>
+          <div class="title">Võ Nguyễn Minh Tú</div>
+          <div class="subtitle">Học sinh lớp 12 Anh — THPT Chuyên Bến Tre</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <!-- requirement 3: menu items -->
+        <a href="#home" class="nav-link active">Trang chủ</a>
+        <a href="#about" class="nav-link">Về tôi</a>
+        <a href="#study" class="nav-link">Học tập</a>
+        <a href="#experience" class="nav-link">Trải nghiệm</a>
+        <a href="#hobbies" class="nav-link">Sở thích</a>
+        <a href="#contact" class="nav-link">Liên hệ</a>
+      </nav>
+
+      <!-- mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Mở menu">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="1" width="18" height="2" rx="1" fill="white"/><rect y="6" width="18" height="2" rx="1" fill="white"/><rect y="11" width="18" height="2" rx="1" fill="white"/></svg>
+      </button>
+    </div>
+
+    <!-- mobile nav popup -->
+    <div id="mobileMenu" style="display:none; position:relative; z-index:3; width:100%; padding:14px 20px;">
+      <div style="background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:12px; border:1px solid rgba(255,255,255,0.02);">
+        <a href="#home" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Trang chủ</a>
+        <a href="#about" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Về tôi</a>
+        <a href="#study" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Học tập</a>
+        <a href="#experience" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Trải nghiệm</a>
+        <a href="#hobbies" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Sở thích</a>
+        <a href="#contact" class="mobile-link" style="display:block;padding:10px;border-radius:8px;color:var(--text-light);text-decoration:none">Liên hệ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="main">
+    <!-- Home (Trang chủ) requirement 4 -->
+    <section id="home" class="card home" aria-labelledby="home-title">
+      <div class="hero-photo" aria-hidden="false">
+        <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_43_07%205%20thg%2012,%202025.png?raw=true" alt="Ảnh đại diện Minh Tú (Trang chủ)">
+      </div>
+      <div class="intro">
+        <h1 id="home-title">Xin chào! Chào mừng bạn đến với trang cá nhân của mình.</h1>
+        <p class="lead">Mình là <strong>Võ Nguyễn Minh Tú</strong> — hiện học lớp 12 Anh tại THPT Chuyên Bến Tre. Đây là nơi mình giới thiệu về bản thân, quá trình học tập, trải nghiệm và sở thích.</p>
+        <div class="cta">
+          <a class="btn" href="#about">Tìm hiểu về tôi</a>
+          <a class="btn secondary" href="#contact">Liên hệ</a>
+        </div>
+
+        <div class="meta-cards" aria-hidden="false">
+          <div class="meta-card">
+            <strong>Trạng thái</strong>
+            <span>Học sinh lớp 12 Anh</span>
+          </div>
+          <div class="meta-card">
+            <strong>Trường</strong>
+            <span>THPT Chuyên Bến Tre</span>
+          </div>
+          <div class="meta-card">
+            <strong>Sở thích</strong>
+            <span>Đọc sách, nghe nhạc, khám phá</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About (Về tôi) requirement 5 -->
+    <section id="about" class="card" aria-labelledby="about-title">
+      <h2 id="about-title">Về tôi</h2>
+      <div class="two-col" style="margin-top:12px;">
+        <div class="photo" aria-hidden="false">
+          <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_59_53%205%20thg%2012,%202025.png?raw=true" alt="Ảnh Minh Tú (Về tôi)">
+        </div>
+        <div>
+          <p style="margin-top:0;">
+            Xin chào — mình là <strong>Võ Nguyễn Minh Tú</strong>. Hiện đang là học sinh lớp 12 Anh tại Trường THPT Chuyên Bến Tre.
+          </p>
+
+          <ul class="clean">
+            <li><strong>Ngày sinh:</strong> 21/03/2008</li>
+            <li><strong>Cung hoàng đạo:</strong> Bạch dương</li>
+            <li><strong>Địa chỉ hiện tại:</strong> Phường Bến Tre, tỉnh Vĩnh Long</li>
+            <li><strong>Quê ba:</strong> Xã Châu Hưng, tỉnh Vĩnh Long</li>
+            <li><strong>Quê mẹ:</strong> Xã Phước Long, tỉnh Vĩnh Long</li>
+          </ul>
+
+          <p class="small-muted">Mình luôn mong muốn học tốt, trau dồi ngoại ngữ và có nhiều trải nghiệm để chuẩn bị cho tương lai.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study (Học tập) requirement 6 -->
+    <section id="study" class="card" aria-labelledby="study-title">
+      <h2 id="study-title">Học tập</h2>
+      <div style="margin-top:12px;">
+        <ul class="clean">
+          <li><strong>Mầm non:</strong> Trường Mẫu giáo Măng Non</li>
+          <li><strong>Tiểu học:</strong> Trường Tiểu học Bến Tre</li>
+          <li><strong>THCS:</strong> Trường THCS Thành phố Bến Tre</li>
+          <li><strong>THPT:</strong> Hiện đang học tại Trường THPT Chuyên Bến Tre</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Môn học yêu thích</h3>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
+          <div style="flex:1;min-width:220px;background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);">
+            <strong>Tiếng Anh</strong>
+            <p class="small-muted" style="margin:8px 0 0">
+              Mình yêu thích Tiếng Anh vì đó là công cụ giúp kết nối với thế giới: đọc tài liệu, tiếp cận kiến thức mới và giao tiếp với người nước ngoài. Học tiếng Anh giúp mình tự tin hơn trong giao tiếp và cơ hội học tập sau này.
+            </p>
+          </div>
+
+          <div style="flex:1;min-width:220px;background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);">
+            <strong>Toán</strong>
+            <p class="small-muted" style="margin:8px 0 0">
+              Mình thích Toán vì nó rèn luyện tư duy logic và khả năng giải quyết vấn đề. Toán còn tạo nền tảng cho nhiều môn khác và cho khả năng tư duy phân tích trong học tập và cuộc sống.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience (Trải nghiệm) requirement 7 -->
+    <section id="experience" class="card" aria-labelledby="exp-title">
+      <h2 id="exp-title">Trải nghiệm</h2>
+      <p style="margin-top:8px">
+        Mình là người thích khám phá những địa điểm mới và tham gia vào các hoạt động xã hội. Những lần tham gia hoạt động tập thể giúp mình mở rộng mối quan hệ, học cách làm việc nhóm và trải nghiệm thực tế ngoài sách vở.
+      </p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <div class="meta-card" style="min-width:200px">
+          <strong>Khám phá</strong>
+          <span>Thích du lịch, đi phượt ngắn ngày, khám phá quán cà phê và địa điểm văn hóa</span>
+        </div>
+        <div class="meta-card" style="min-width:200px">
+          <strong>Hoạt động xã hội</strong>
+          <span>Tham gia các hoạt động cộng đồng, thiện nguyện và dự án nhỏ cùng trường</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies (Sở thích) requirement 8 -->
+    <section id="hobbies" class="card" aria-labelledby="hobbies-title">
+      <h2 id="hobbies-title">Sở thích</h2>
+
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:300px">
+          <h3>Đọc sách</h3>
+          <p class="small-muted">Mình thích đọc, đặc biệt là tiểu thuyết ngôn tình và truyện dành cho thiếu nhi. Thích đọc hơn xem phim.</p>
+
+          <p><strong>Tiểu thuyết ngôn tình đã đọc (ví dụ):</strong></p>
+          <ul class="clean">
+            <li>Sam Sam đến rồi</li>
+            <li>Khó dỗ dành</li>
+            <li>Lê hấp đường phèn</li>
+            <li>Mandarin của tôi</li>
+            <li>Kẹo nổ xoài sầu riêng</li>
+            <li>...và nhiều tác phẩm khác.</li>
+          </ul>
+
+          <p><strong>Truyện con nít yêu thích:</strong></p>
+          <ul class="clean">
+            <li>Vừa nhắm mắt vừa mở cửa sổ</li>
+            <li>Trên đồi mở mắt và mơ</li>
+            <li>Long nhong hẻm nhỏ</li>
+            <li>Trốn lên mái nhà để khóc</li>
+          </ul>
+        </div>
+
+        <div style="flex:1;min-width:300px">
+          <h3>Nghe nhạc</h3>
+          <p class="small-muted">Mình nghe nhiều thể loại — bài nào bắt tai thì nghe, không gói gọn vào một thể loại cụ thể.</p>
+
+          <!-- requirement 8: audio list -->
+          <div class="audio-list" aria-label="Danh sách bài hát">
+            <div class="audio-item">
+              <div style="flex:1">
+                <div class="title">Aloha (English Cover)</div>
+              </div>
+              <audio controls preload="none" style="max-width:320px">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Aloha%2C%20Cool%20(English%20Cover)%20(1).mp3?raw=true" type="audio/mpeg">
+                Trình duyệt không hỗ trợ audio.
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Axel F (The Frog Song)</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Axel%20F%20(The%20Frog%20Song).mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Phonics song</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Phonics%20Song.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">No face, No name, No number</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/No%20Face%2C%20No%20Name%2C%20No%20Number.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Chilly Cha cha cha</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Chilly%20Cha%20Cha.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">I like to move it</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/I%20Like%20to%20Move%20it.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Người ôm pháo hoa</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Ng%C6%B0%E1%BB%9Di%20%C3%94m%20Ph%C3%A1o%20Hoa.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Nghi ngờ</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Nghi-Ngo-Dong-Nhi-Ngo-Kien-Huy.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <div class="audio-item">
+              <div class="title">Miền cát trắng</div>
+              <audio controls preload="none">
+                <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Mien-Cat-Trang-Quang-Vinh.mp3?raw=true" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (Liên hệ) requirement 9 -->
+    <section id="contact" class="card" aria-labelledby="contact-title">
+      <h2 id="contact-title">Liên hệ</h2>
+      <p class="small-muted" style="margin-top:8px">Bạn có thể liên hệ với mình qua các kênh bên dưới.</p>
+
+      <div style="margin-top:12px" class="contact-grid">
+        <div class="contact-card">
+          <div class="icon" aria-hidden="true">✉️</div>
+          <div>
+            <div style="font-weight:700">Email</div>
+            <div class="small-muted"><a href="mailto:minhtuvonguyen@gmail.com" style="color:inherit;text-decoration:underline">minhtuvonguyen@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon" aria-hidden="true">f</div>
+          <div>
+            <div style="font-weight:700">Facebook</div>
+            <div class="small-muted"><a href="https://www.facebook.com/tu.vo.698353/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">facebook.com/tu.vo.698353</a></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon" aria-hidden="true">📞</div>
+          <div>
+            <div style="font-weight:700">SĐT</div>
+            <div class="small-muted"><a href="tel:0834502968" style="color:inherit;text-decoration:underline">0834502968</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with button back to main site (requirement 2) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-left">© 2025 — Trang cá nhân của Võ Nguyễn Minh Tú</div>
+    <div>
+      <a class="back-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/" target="_blank" rel="noopener">
+        <!-- simple icon -->
+        <svg width="16" height="16" viewBox="0 0 24 24" style="display:block" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Quay lại trang chính
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger?.addEventListener('click', () => {
+      if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+        mobileMenu.style.display = 'block';
+      } else {
+        mobileMenu.style.display = 'none';
+      }
+    });
+
+    // active nav link handling
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+    const mobileLinks = Array.from(document.querySelectorAll('.mobile-link'));
+    function setActive(hash){
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+      mobileLinks.forEach(a => a.style.background = (a.getAttribute('href') === hash) ? 'rgba(255,255,255,0.03)' : 'transparent');
+    }
+
+    // set active on click
+    navLinks.forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        navLinks.forEach(n=>n.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
+    mobileLinks.forEach(a=>{
+      a.addEventListener('click', ()=> {
+        mobileMenu.style.display = 'none';
+        // highlight main nav too
+        setTimeout(()=> setActive(a.getAttribute('href')), 50);
+      });
+    });
+
+    // update active on scroll (intersection)
+    const sections = document.querySelectorAll('main section[id]');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=> {
+        if (entry.isIntersecting) {
+          setActive('#' + entry.target.id);
+        }
+      });
+    }, {root:null, threshold: 0.45});
+
+    sections.forEach(s => observer.observe(s));
+
+    // stop other audio when one plays
+    document.addEventListener('play', function(e){
+      const audios = document.querySelectorAll('audio');
+      audios.forEach(a => {
+        if (a !== e.target) a.pause();
+      });
+    }, true);
+  </script>
+</body>
+</html>
