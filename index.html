@@ -8,14 +8,19 @@
 <style>
 /* ========== STYLE GỌN LẠI TOÀN BỘ ========== */
 :root{
-  --bg:#0f172a; --card:#0b1220; --accent:#7c3aed; --accent2:#06b6d4;
-  --muted:#94a3b8; --text:#e6eef8;
+  --bg:#d8eacc;
+  --bg2:#cfe8b5;
+  --card:#ffffff80;
+  --accent:#7c3aed;
+  --accent2:#06b6d4;
+  --muted:#4b5563;
+  --text:#1f2937;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   font-family:"Inter",system-ui;
-  background:linear-gradient(180deg,#020617,#0a1127);
-  color:var(--text);
+  background: linear-gradient(180deg, #d8eacc, #cfe8b5); /* MATCHA */
+  color: var(--text);
 }
 
 /* Header background image */
@@ -47,13 +52,13 @@ body{
 .main-nav{display:flex;gap:10px;}
 .main-nav a{
   padding:10px 14px;border-radius:10px;
-  text-decoration:none;color:var(--text);
+  text-decoration:none;color:white;
   font-weight:600;font-size:14px;
   transition:.2s;
 }
 .main-nav a.active,
 .main-nav a:hover{
-  background:rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.2);
 }
 
 /* MOBILE NAV */
@@ -64,244 +69,20 @@ body{
 /* Container */
 .container{max-width:1100px;margin:40px auto;padding:20px;}
 .card{
-  background:rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(5px);
   padding:20px;border-radius:14px;margin-bottom:24px;
-  border:1px solid rgba(255,255,255,0.05);
+  border:1px solid rgba(0,0,0,0.1);
 }
 
 /* HOME */
 .home{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
 .hero-photo{
   width:260px;height:260px;border-radius:16px;overflow:hidden;
-  border:5px solid rgba(255,255,255,.06);
+  border:5px solid rgba(255,255,255,.4);
   flex-shrink:0;
 }
 .hero-photo img{width:100%;height:100%;object-fit:cover}
 .intro h1{margin-bottom:10px}
 .lead{color:var(--muted);margin-bottom:12px}
 .btn{
-  padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));
-  color:white;text-decoration:none;font-weight:600;
-}
-.btn.secondary{background:none;border:1px solid #fff3}
-
-/* PHOTOS */
-.photo img{width:100%;border-radius:14px}
-
-/* AUDIO */
-.audio-item{background:#ffffff08;padding:10px;border-radius:10px;margin-top:10px}
-
-/* CONTACT GRID */
-.contact-grid{display:flex;flex-wrap:wrap;gap:14px}
-.contact-card{background:#ffffff08;padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center}
-.icon{
-  width:40px;height:40px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex;align-items:center;justify-content:center;
-  color:white;border-radius:10px;
-}
-
-/* FOOTER */
-.site-footer{
-  max-width:1100px;margin:20px auto 40px;padding:20px;
-  display:flex;justify-content:space-between;color:var(--muted);
-}
-.back-btn{color:var(--text);text-decoration:none;padding:8px 12px;border:1px solid #fff3;border-radius:10px}
-
-/* RESPONSIVE */
-@media(max-width:850px){
-  .main-nav{display:none}
-  .hamburger{display:block}
-  .header-inner{flex-direction:column;gap:14px}
-  .home{flex-direction:column}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-inner">
-
-    <div class="brand">
-      <div class="logo">MT</div>
-      <div>
-        <div style="font-weight:700">Võ Nguyễn Minh Tú</div>
-        <div style="font-size:13px;color:#d3d7e4b0">Lớp 12 Anh — THPT Chuyên Bến Tre</div>
-      </div>
-    </div>
-
-    <nav class="main-nav">
-      <a href="#home" class="nav-link active">Trang chủ</a>
-      <a href="#about" class="nav-link">Về tôi</a>
-      <a href="#study" class="nav-link">Học tập</a>
-      <a href="#experience" class="nav-link">Trải nghiệm</a>
-      <a href="#hobbies" class="nav-link">Sở thích</a>
-      <a href="#contact" class="nav-link">Liên hệ</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger">☰</button>
-  </div>
-
-  <div id="mobileMenu" class="mobile-nav">
-    <a href="#home">Trang chủ</a>
-    <a href="#about">Về tôi</a>
-    <a href="#study">Học tập</a>
-    <a href="#experience">Trải nghiệm</a>
-    <a href="#hobbies">Sở thích</a>
-    <a href="#contact">Liên hệ</a>
-  </div>
-</header>
-
-<!-- ================= MAIN CONTENT ================= -->
-<main class="container">
-
-<!-- ===== TRANG CHỦ ===== -->
-<section id="home" class="card">
-  <div class="home">
-    <div class="hero-photo">
-      <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_43_07%205%20thg%2012,%202025.png?raw=true">
-    </div>
-
-    <div class="intro">
-      <h1>Xin chào! Chào mừng bạn đến với trang cá nhân của mình.</h1>
-      <p class="lead">Mình là <b>Võ Nguyễn Minh Tú</b> — học sinh lớp 12 Anh tại THPT Chuyên Bến Tre.</p>
-
-      <a class="btn" href="#about">Tìm hiểu về tôi</a>
-      <a class="btn secondary" href="#contact" style="margin-left:8px">Liên hệ</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== VỀ TÔI ===== -->
-<section id="about" class="card">
-  <h2>Về tôi</h2>
-  <div class="photo" style="margin:12px 0">
-    <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_59_53%205%20thg%2012,%202025.png?raw=true">
-  </div>
-
-  <p>Mình là <b>Võ Nguyễn Minh Tú</b>, học sinh lớp 12 Anh trường THPT Chuyên Bến Tre.</p>
-  <ul style="margin-left:20px;margin-top:10px;color:var(--muted)">
-    <li>Ngày sinh: 21/03/2008</li>
-    <li>Cung hoàng đạo: Bạch Dương</li>
-    <li>Địa chỉ: Phường Bến Tre, tỉnh Vĩnh Long</li>
-    <li>Quê ba: Xã Châu Hưng, tỉnh Vĩnh Long</li>
-    <li>Quê mẹ: Xã Phước Long, tỉnh Vĩnh Long</li>
-  </ul>
-</section>
-
-<!-- ===== HỌC TẬP ===== -->
-<section id="study" class="card">
-  <h2>Học tập</h2>
-
-  <ul style="margin-left:20px;margin-top:10px">
-    <li>Mầm non: Mẫu giáo Măng Non</li>
-    <li>Tiểu học: Trường Tiểu học Bến Tre</li>
-    <li>THCS: THCS Thành phố Bến Tre</li>
-    <li>THPT: THPT Chuyên Bến Tre</li>
-  </ul>
-
-  <h3 style="margin-top:14px">Môn học yêu thích</h3>
-  <p><b>Tiếng Anh</b>: Giúp mình mở rộng kiến thức, giao tiếp và tiếp cận thế giới.</p>
-  <p><b>Toán</b>: Rèn luyện tư duy logic, phân tích và giải quyết vấn đề.</p>
-</section>
-
-<!-- ===== TRẢI NGHIỆM ===== -->
-<section id="experience" class="card">
-  <h2>Trải nghiệm</h2>
-  <p>Mình thích khám phá những địa điểm mới và tham gia vào các hoạt động xã hội.</p>
-</section>
-
-<!-- ===== SỞ THÍCH ===== -->
-<section id="hobbies" class="card">
-  <h2>Sở thích</h2>
-
-  <h3>Đọc sách</h3>
-  <p>Đặc biệt là ngôn tình và truyện thiếu nhi.</p>
-
-  <h3 style="margin-top:14px">Nghe nhạc</h3>
-  
-  <div class="audio-item">
-    <audio controls>
-      <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Aloha%2C%20Cool%20(English%20Cover)%20(1).mp3?raw=true">
-    </audio>
-  </div>
-
-  <div class="audio-item">
-    <audio controls>
-      <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Axel%20F%20(The%20Frog%20Song).mp3?raw=true">
-    </audio>
-  </div>
-
-  <!-- Bạn có thể thêm tiếp các audio khác tương tự -->
-</section>
-
-<!-- ===== LIÊN HỆ ===== -->
-<section id="contact" class="card">
-  <h2>Liên hệ</h2>
-
-  <div class="contact-grid" style="margin-top:14px">
-    <div class="contact-card">
-      <div class="icon">✉️</div>
-      <div>Email: <a style="color:white" href="mailto:minhtuvonguyen@gmail.com">minhtuvonguyen@gmail.com</a></div>
-    </div>
-
-    <div class="contact-card">
-      <div class="icon">f</div>
-      <div>Facebook: <a style="color:white" href="https://facebook.com/tu.vo.698353">tu.vo.698353</a></div>
-    </div>
-
-    <div class="contact-card">
-      <div class="icon">📞</div>
-      <div>SĐT: 0834502968</div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div>© 2025 — Trang cá nhân của Võ Nguyễn Minh Tú</div>
-  <a class="back-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">← Quay lại trang chính</a>
-</footer>
-
-<!-- ================= script ẨN / HIỆN SECTION ================= -->
-<script>
-const sections=document.querySelectorAll("section[id]");
-const navLinks=document.querySelectorAll(".nav-link");
-const mobileMenu=document.getElementById("mobileMenu");
-
-// Ẩn tất cả trừ TRANG CHỦ
-sections.forEach(s=>{ if(s.id!=="home") s.style.display="none"; });
-
-// Click menu
-navLinks.forEach(link=>{
-  link.addEventListener("click",e=>{
-    e.preventDefault();
-    const id=link.getAttribute("href").replace("#","");
-    // active menu
-    navLinks.forEach(n=>n.classList.remove("active"));
-    link.classList.add("active");
-
-    // ẩn / hiện section
-    sections.forEach(sec=>{
-      sec.style.display = (sec.id===id)?"block":"none";
-    });
-
-    window.scrollTo({top:0,behavior:"smooth"});
-  });
-});
-
-// MOBILE MENU
-document.getElementById("hamburger").onclick=()=>{
-  mobileMenu.style.display = mobileMenu.style.display==="flex" ? "none" : "flex";
-};
-mobileMenu.querySelectorAll("a").forEach(a=>{
-  a.onclick=()=>{ mobileMenu.style.display="none"; };
-});
-</script>
-
-</body>
-</html>
