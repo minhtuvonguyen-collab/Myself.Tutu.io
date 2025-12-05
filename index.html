@@ -355,7 +355,23 @@ document.getElementById("hamburger").onclick=()=>{
 mobileMenu.querySelectorAll("a").forEach(a=>{
   a.onclick=()=>{ mobileMenu.style.display="none"; };
 });
-</script>
 
+const hobbyBtns = document.querySelectorAll(".hobby-btn");
+const hobbyContents = document.querySelectorAll(".hobby-content");
+
+hobbyBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // reset button style
+    hobbyBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    // toggle panels
+    const target = btn.getAttribute("data-target");
+    hobbyContents.forEach(c => {
+      c.style.display = (c.id === target) ? "block" : "none";
+    });
+  });
+});
+</script>
 </body>
 </html>
