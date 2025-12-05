@@ -2,187 +2,128 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Võ Nguyễn Minh Tú — Trang cá nhân (Matcha Nature Pro)</title>
-  <meta name="description" content="Trang cá nhân của Võ Nguyễn Minh Tú - Theme: Matcha Nature (Onion SVG), interactive single-page."/>
-  <style>
-    :root{
-      --matcha-1:#d8eacc;
-      --matcha-2:#cfe8b5;
-      --card:#ffffffef;
-      --text:#1f2937;
-      --muted:#51606a;
-      --accent-1:#9fce77;
-      --accent-2:#7fc24a;
-      --glass: rgba(255,255,255,0.8);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial; color:var(--text); -webkit-font-smoothing:antialiased}
-    body{
-      background: linear-gradient(180deg,var(--matcha-1),var(--matcha-2));
-      line-height:1.45;
-      overflow-x:hidden;
-    }
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Võ Nguyễn Minh Tú — Trang cá nhân</title>
 
-    /* ---------- Header ---------- */
-    .site-header{
-      position:relative;padding:36px 20px 46px;
-      overflow:hidden;
-    }
-    .site-header::before{
-      content:"";position:absolute;inset:0;
-      background-image:url("https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/2100d3a9-cea5-4f46-863c-35b756e712a8.png?raw=true");
-      background-size:cover;background-position:center;
-      filter:brightness(0.45) saturate(0.9);
-      z-index:0;
-      transform-origin:center;
-      transition:transform .8s ease;
-    }
-    .site-header:hover::before{ transform:scale(1.02) }
-    .header-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{
-      width:72px;height:72px;border-radius:16px;
-      background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
-      display:grid;place-items:center;color:white;font-weight:900;font-size:22px;
-      box-shadow:0 12px 32px rgba(15,30,10,0.12);
-    }
-    .brand .titles .name{color:white;font-weight:800;font-size:18px}
-    .brand .titles .role{color:#e9f2df;font-size:13px}
+<style>
+:root{
+  --matcha-1:#d8eacc;
+  --matcha-2:#cfe8b5;
+  --card:#ffffffef;
+  --text:#1f2937;
+  --muted:#51606a;
+  --accent-1:#9fce77;
+  --accent-2:#7fc24a;
+  --glass: rgba(255,255,255,0.85);
+  --radius:14px;
+}
 
-    /* Nav */
-    nav.main-nav{display:flex;gap:10px;align-items:center}
-    nav.main-nav a{
-      color:white;text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:700;
-      background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border:1px solid rgba(255,255,255,0.03);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s;
-    }
-    nav.main-nav a:hover{ transform:translateY(-3px); box-shadow:0 8px 22px rgba(6,40,10,0.12) }
-    nav.main-nav a.active{
-      background:linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0.1));
-      box-shadow:0 12px 30px rgba(30,70,20,0.12);
-      transform:translateY(-4px);
-    }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:var(--text);-webkit-font-smoothing:antialiased}
+body{
+  background: linear-gradient(180deg,var(--matcha-1),var(--matcha-2));
+  line-height:1.45;
+  overflow-x:hidden;
+}
 
-    .hamburger{display:none;background:none;border:0;color:white;font-size:28px}
+/* Header */
+.site-header{position:relative;padding:36px 20px 46px;overflow:hidden}
+.site-header::before{content:"";position:absolute;inset:0;background-image:url("https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/2100d3a9-cea5-4f46-863c-35b756e712a8.png?raw=true");background-size:cover;background-position:center;filter:brightness(0.45) saturate(0.9);z-index:0}
+.header-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:grid;place-items:center;color:white;font-weight:900;font-size:22px;box-shadow:0 12px 32px rgba(15,30,10,0.12)}
+.titles .name{color:white;font-weight:800;font-size:18px}
+.titles .role{color:#e9f2df;font-size:13px}
 
-    #mobileMenu{display:none;max-width:1100px;margin:12px auto 0;padding:0 20px}
+/* Nav */
+nav.main-nav{display:flex;gap:10px;align-items:center}
+nav.main-nav a{color:white;text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:700;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease, box-shadow .18s ease}
+nav.main-nav a:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(6,40,10,0.12)}
+nav.main-nav a.active{background:linear-gradient(90deg, rgba(255,255,255,0.18), rgba(255,255,255,0.1));box-shadow:0 12px 30px rgba(30,70,20,0.12);transform:translateY(-4px)}
+.hamburger{display:none;background:none;border:0;color:white;font-size:28px}
+.mobile-nav{display:none}
 
-    /* ---------- Container & Cards ---------- */
-    .container{max-width:1100px;margin:-30px auto 60px;padding:20px;position:relative;z-index:2}
-    .card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:22px;box-shadow:0 10px 30px rgba(10,20,10,0.06);border:1px solid rgba(0,0,0,0.04)}
+/* Container & cards */
+.container{max-width:1100px;margin:-30px auto 60px;padding:20px;position:relative;z-index:2}
+.card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:22px;box-shadow:0 10px 30px rgba(10,20,10,0.06);border:1px solid rgba(0,0,0,0.04)}
 
-    /* ---------- Home ---------- */
-    .home{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-    .hero-photo{width:300px;height:300px;border-radius:18px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 20px 40px rgba(12,30,10,0.08)}
-    .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
-    .intro h1{font-size:28px;margin:0 0 8px}
-    .lead{color:var(--muted);margin:0 0 12px}
-    .cta{display:flex;gap:10px}
-    .btn{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent-1),#78c344);color:white;text-decoration:none;font-weight:800;box-shadow:0 10px 22px rgba(30,65,18,0.12);transition:transform .15s}
-    .btn:active{transform:scale(.97)}
+/* Home */
+.home{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.hero-photo{width:300px;height:300px;border-radius:18px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 20px 40px rgba(12,30,10,0.08)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.intro h1{font-size:28px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 12px}
+.cta{display:flex;gap:10px}
+.btn{padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent-1),#78c344);color:white;text-decoration:none;font-weight:800;box-shadow:0 10px 22px rgba(30,65,18,0.12);transition:transform .15s}
+.btn.secondary{background:transparent;color:var(--text);border:2px solid rgba(0,0,0,0.06)}
 
-    /* ---------- Two-col (about) ---------- */
-    .two-col{display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start}
-    .photo{border-radius:14px;overflow:hidden;border:6px solid rgba(255,255,255,0.6)}
-    .photo img{width:100%;height:100%;object-fit:cover}
+/* two-col */
+.two-col{display:grid;grid-template-columns:320px 1fr;gap:22px;align-items:start}
+.photo{border-radius:14px;overflow:hidden;border:6px solid rgba(255,255,255,0.6)}
+.photo img{width:100%;height:100%;object-fit:cover}
 
-    /* lists */
-    ul.clean{margin:8px 0 0 18px;color:var(--muted)}
+/* clean list */
+ul.clean{margin:8px 0 0 18px;color:var(--muted)}
 
-    /* audio */
-    .audio-list{display:flex;flex-direction:column;gap:12px}
-    .audio-item{background:#ffffffee;padding:12px;border-radius:12px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 20px rgba(12,30,10,0.06);border:1px solid rgba(0,0,0,0.04)}
-    .audio-item span{font-weight:700;color:var(--text);flex:1}
+/* study */
+.study-grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.study-card{flex:1;min-width:220px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
 
-    /* contact */
-    .contact-grid{display:flex;gap:12px;flex-wrap:wrap}
-    .contact-card{background:#ffffffee;padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center;border:1px solid rgba(0,0,0,0.04)}
-    .icon{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#b6d98c,#8fcf6b);color:white;font-weight:800}
+/* hobby tabs */
+.hobby-tab-wrapper{display:flex;gap:14px;margin-top:14px;margin-bottom:18px}
+.hobby-btn{flex:1;padding:12px;border-radius:16px;border:none;cursor:pointer;font-weight:800;font-size:15px;background:#eaf4dc;color:#486835;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .22s;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.hobby-btn:active{transform:scale(.98)}
+.hobby-btn.active{background:var(--accent-1);color:white;box-shadow:0 10px 30px rgba(30,80,18,0.18);transform:translateY(-3px)}
 
-    /* footer */
-    footer.site-footer{max-width:1100px;margin:20px auto 60px;padding:18px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.hobby-content{display:none;opacity:0;transform:translateY(10px);transition:all .28s ease}
+.hobby-content.visible{display:block;opacity:1;transform:translateY(0)}
 
-    /* hobby tabs (improved) */
-    .hobby-tab-wrapper{display:flex;gap:14px;margin-top:14px;margin-bottom:18px}
-    .hobby-btn{flex:1;padding:12px;border-radius:16px;border:none;cursor:pointer;font-weight:800;font-size:15px;background:#eaf4dc;color:#486835;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .22s;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    .hobby-btn .tab-icon{width:22px;height:22px}
-    .hobby-btn:active{transform:scale(.98)}
-    .hobby-btn.active{background:var(--accent-1);color:white;box-shadow:0 10px 30px rgba(30,80,18,0.18);transform:translateY(-3px)}
+/* audio list / player */
+.audio-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.audio-item{position:relative;background:linear-gradient(145deg,#e8f4d9,#ffffff);padding:16px;border-radius:16px;display:flex;gap:14px;align-items:center;border:1px solid rgba(0,0,0,0.06);box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:.25s}
+.audio-item:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.audio-onion{width:32px;height:32px;transition:.3s}
+.audio-item.playing .audio-onion{filter:drop-shadow(0 0 8px #9fce77);transform:scale(1.12) rotate(-6deg);animation:onionBounce .8s infinite}
+@keyframes onionBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
-    .hobby-content{display:none;opacity:0;transform:translateY(10px);transition:all .28s ease}
-    .hobby-content.visible{display:block;opacity:1;transform:translateY(0)}
+.song-wave{width:22px;height:22px;display:none;flex-shrink:0}
+.audio-item.playing .song-wave{display:inline-block}
+.song-wave rect{animation:wave 1s infinite ease-in-out;transform-origin:center;fill:#78a35b}
+.song-wave rect:nth-child(1){animation-delay:0s}
+.song-wave rect:nth-child(2){animation-delay:.2s}
+.song-wave rect:nth-child(3){animation-delay:.4s}
+@keyframes wave{0%,100%{height:6px}50%{height:20px}}
 
-    /* onion audio icon */
-    .audio-onion{width:26px;height:26px;flex-shrink:0}
+.matcha-progress{height:6px;width:220px;background:#dce8cd;border-radius:20px;overflow:hidden;margin-left:12px}
+.matcha-fill{height:100%;width:0%;background:linear-gradient(90deg,#93d090,#6fb872);transition:width .12s linear}
 
-    /* Floating onion (SVG) container */
-    #onion-root{position:fixed;left:0;top:0;right:0;bottom:0;pointer-events:none;z-index:1;overflow:visible}
+/* contact */
+.contact-grid{display:flex;gap:12px;flex-wrap:wrap}
+.contact-card{background:#ffffffee;padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center;border:1px solid rgba(0,0,0,0.04)}
+.icon{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#b6d98c,#8fcf6b);color:white;font-weight:800}
 
-    /* Floating animation keyframes (curve) */
-    @keyframes fallCurveLeft {
-      0% { transform: translateY(-10vh) translateX(0) rotate(0deg) scale(.9); opacity:0 }
-      10% { opacity:1 }
-      50% { transform: translateY(45vh) translateX(-6vw) rotate(30deg) scale(1) }
-      100% { transform: translateY(120vh) translateX(-14vw) rotate(70deg) scale(.9); opacity:0 }
-    }
-    @keyframes fallCurveRight {
-      0% { transform: translateY(-10vh) translateX(0) rotate(0deg) scale(.9); opacity:0 }
-      10% { opacity:1 }
-      50% { transform: translateY(55vh) translateX(10vw) rotate(-30deg) scale(1) }
-      100% { transform: translateY(120vh) translateX(22vw) rotate(-80deg) scale(.9); opacity:0 }
-    }
-
-    /* responsive */
-    @media(max-width:900px){
-      .header-inner{flex-direction:column;align-items:flex-start;gap:14px}
-      nav.main-nav{display:none}
-      .hamburger{display:block}
-      #mobileMenu{display:none}
-      .two-col{grid-template-columns:1fr}
-      .hero-photo{width:100%;height:260px}
-      .photo img{height:260px;object-position:center}
-      .hobby-tab-wrapper{flex-direction:row}
-    }
-    @media(max-width:520px){
-      .intro h1{font-size:20px}
-    }
-
-    /* accessible focus styles */
-    a:focus, button:focus { outline:3px solid rgba(127,194,74,0.25); outline-offset:2px; }
-  </style>
+/* footer */
+footer.site-footer{max-width:1100px;margin:20px auto 60px;padding:18px;display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.back-btn{padding:8px 12px;border-radius:10px;background:rgba(0,0,0,0.04);text-decoration:none;color:var(--text);border:1px solid rgba(0,0,0,0.06)}
+</style>
 </head>
+
 <body>
 
-<!-- SVG onion symbol (hidden) -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="onion" viewBox="0 0 64 64">
-    <g stroke="#4e7a2a" stroke-width="2" fill="#cfe9a7" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M32 6c-3 4-6 9-6 14 0 6 4 10 6 12 2-2 6-6 6-12 0-5-3-10-6-14z"/>
-      <path d="M18 32c-2 4-3 9-1 14 4 11 17 14 25 9 7-4 11-14 7-23-3-8-11-13-17-14-7 1-13 6-14 14z" fill="#d8f5b7"/>
-      <circle cx="26" cy="24" r="0.5" fill="#5c7f2e"/>
-      <circle cx="38" cy="24" r="0.5" fill="#5c7f2e"/>
-    </g>
-  </symbol>
-</svg>
-
-<!-- Floating onion container -->
-<div id="onion-root" aria-hidden="true"></div>
-
-<!-- Header -->
-<header class="site-header" role="banner">
+<!-- ================= HEADER ================= -->
+<header class="site-header">
   <div class="header-inner">
+
     <div class="brand">
-      <div class="logo" aria-hidden="true"><svg width="36" height="36"><use href="#onion"/></svg></div>
+      <div class="logo">MT</div>
       <div class="titles">
         <div class="name">Võ Nguyễn Minh Tú</div>
-        <div class="role">Học sinh lớp 12 Anh — THPT Chuyên Bến Tre</div>
+        <div class="role">Lớp 12 Anh — THPT Chuyên Bến Tre</div>
       </div>
     </div>
 
-    <nav class="main-nav" aria-label="Chọn mục">
+    <!-- NAV DESKTOP -->
+    <nav class="main-nav">
       <a href="#home" class="nav-link active">Trang chủ</a>
       <a href="#about" class="nav-link">Về tôi</a>
       <a href="#study" class="nav-link">Học tập</a>
@@ -191,344 +132,436 @@
       <a href="#contact" class="nav-link">Liên hệ</a>
     </nav>
 
-    <button id="hamburger" class="hamburger" aria-label="Mở menu">☰</button>
+    <!-- MOBILE BUTTON -->
+    <button class="hamburger" id="hamburger">☰</button>
+
   </div>
 
-  <div id="mobileMenu" style="display:none;">
-    <a href="#home" class="mitem">Trang chủ</a>
-    <a href="#about" class="mitem">Về tôi</a>
-    <a href="#study" class="mitem">Học tập</a>
-    <a href="#experience" class="mitem">Trải nghiệm</a>
-    <a href="#hobbies" class="mitem">Sở thích</a>
-    <a href="#contact" class="mitem">Liên hệ</a>
+  <!-- MOBILE NAV -->
+  <div id="mobileMenu" class="mobile-nav">
+    <a href="#home">Trang chủ</a>
+    <a href="#about">Về tôi</a>
+    <a href="#study">Học tập</a>
+    <a href="#experience">Trải nghiệm</a>
+    <a href="#hobbies">Sở thích</a>
+    <a href="#contact">Liên hệ</a>
   </div>
 </header>
 
-<main class="container" role="main">
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container">
 
-  <!-- HOME -->
-  <section id="home" class="card" aria-labelledby="home-title">
-    <div class="home">
-      <div class="hero-photo" aria-hidden="false">
-        <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_43_07%205%20thg%2012,%202025.png?raw=true" alt="Ảnh Minh Tú (Trang chủ)">
-      </div>
-
-      <div class="intro">
-        <h1 id="home-title">Xin chào! Chào mừng bạn đến với trang cá nhân của mình. <span style="font-size:20px;margin-left:6px"><svg width="20" height="20"><use href="#onion"/></svg></span></h1>
-        <p class="lead">Mình là <strong>Võ Nguyễn Minh Tú</strong> — hiện học lớp 12 Anh tại THPT Chuyên Bến Tre.</p>
-        <div class="cta">
-          <a class="btn" href="#about">Tìm hiểu về tôi</a>
-          <a class="btn" href="#contact" style="background:transparent;color:var(--text);border:2px solid rgba(0,0,0,0.06)">Liên hệ</a>
-        </div>
-
-        <div class="meta-cards" style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
-          <div style="background:var(--glass);padding:10px 12px;border-radius:10px;min-width:140px"> <strong>Trạng thái</strong><div style="color:var(--muted)">Học sinh lớp 12 Anh</div></div>
-          <div style="background:var(--glass);padding:10px 12px;border-radius:10px;min-width:140px"> <strong>Trường</strong><div style="color:var(--muted)">THPT Chuyên Bến Tre</div></div>
-          <div style="background:var(--glass);padding:10px 12px;border-radius:10px;min-width:140px"> <strong>Sở thích</strong><div style="color:var(--muted)">Đọc sách, nghe nhạc, khám phá</div></div>
-        </div>
-      </div>
+<!-- ===== TRANG CHỦ ===== -->
+<section id="home" class="card">
+  <div class="home">
+    <div class="hero-photo">
+      <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_43_07%205%20thg%2012,%202025.png?raw=true">
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="card" aria-labelledby="about-title">
-    <h2 id="about-title">Về tôi</h2>
-    <div class="two-col" style="margin-top:12px">
-      <div class="photo" aria-hidden="false">
-        <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_59_53%205%20thg%2012,%202025.png?raw=true" alt="Ảnh Minh Tú (Về tôi)">
-      </div>
-      <div>
-        <p>Xin chào — mình là <strong>Võ Nguyễn Minh Tú</strong>. Hiện đang là học sinh lớp 12 Anh tại Trường THPT Chuyên Bến Tre.</p>
-        <ul class="clean">
-          <li><svg width="16" height="16"><use href="#onion"/></svg> <strong>Ngày sinh:</strong> 21/03/2008</li>
-          <li><svg width="16" height="16"><use href="#onion"/></svg> <strong>Cung hoàng đạo:</strong> Bạch dương</li>
-          <li><svg width="16" height="16"><use href="#onion"/></svg> <strong>Địa chỉ hiện tại:</strong> Phường Bến Tre, tỉnh Vĩnh Long</li>
-          <li><svg width="16" height="16"><use href="#onion"/></svg> <strong>Quê ba:</strong> Xã Châu Hưng, tỉnh Vĩnh Long</li>
-          <li><svg width="16" height="16"><use href="#onion"/></svg> <strong>Quê mẹ:</strong> Xã Phước Long, tỉnh Vĩnh Long</li>
-        </ul>
-        <p style="color:var(--muted);margin-top:8px">Mình luôn mong muốn học tốt, trau dồi ngoại ngữ và có nhiều trải nghiệm để chuẩn bị cho tương lai.</p>
-      </div>
+    <div class="intro">
+      <h1>Xin chào! Chào mừng bạn đến với trang cá nhân của mình.</h1>
+      <p class="lead">
+        Mình là <b>Võ Nguyễn Minh Tú</b> — học sinh lớp 12 Anh tại THPT Chuyên Bến Tre.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- STUDY -->
-  <section id="study" class="card" aria-labelledby="study-title">
-    <h2 id="study-title">Học tập</h2>
-    <div style="margin-top:12px">
+<!-- ===== VỀ TÔI ===== -->
+<section id="about" class="card">
+  <h2>Về tôi</h2>
+
+  <div class="two-col">
+    <div class="photo">
+      <img src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/ChatGPT%20Image%2019_59_53%205%20thg%2012,%202025.png?raw=true">
+    </div>
+
+    <div>
+      <p>Mình là <b>Võ Nguyễn Minh Tú</b>, học sinh lớp 12 Anh trường THPT Chuyên Bến Tre.</p>
+
       <ul class="clean">
-        <li>🧅 <strong>Mầm non:</strong> Trường Mẫu giáo Măng Non</li>
-        <li>🧅 <strong>Tiểu học:</strong> Trường Tiểu học Bến Tre</li>
-        <li>🧅 <strong>THCS:</strong> Trường THCS Thành phố Bến Tre</li>
-        <li>🧅 <strong>THPT:</strong> Hiện đang học tại Trường THPT Chuyên Bến Tre</li>
-      </ul>
-
-      <h3 style="margin-top:12px">Môn học yêu thích</h3>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
-        <div style="flex:1;min-width:220px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
-          <strong>🧅 Tiếng Anh</strong>
-          <p style="color:var(--muted);margin-top:8px">Mình yêu thích Tiếng Anh vì đó là công cụ giúp kết nối với thế giới: đọc tài liệu, tiếp cận kiến thức mới và giao tiếp với người nước ngoài. Học tiếng Anh giúp mình tự tin hơn trong giao tiếp và cơ hội học tập sau này.</p>
-        </div>
-
-        <div style="flex:1;min-width:220px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
-          <strong>🧅 Toán</strong>
-          <p style="color:var(--muted);margin-top:8px">Mình thích Toán vì nó rèn luyện tư duy logic và khả năng giải quyết vấn đề. Toán còn tạo nền tảng cho nhiều môn khác và cho khả năng tư duy phân tích trong học tập và cuộc sống.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="card" aria-labelledby="exp-title">
-    <h2 id="exp-title">Trải nghiệm</h2>
-    <p style="margin-top:8px">Mình là người thích khám phá những địa điểm mới và tham gia vào các hoạt động xã hội. Những lần tham gia hoạt động tập thể giúp mình mở rộng mối quan hệ, học cách làm việc nhóm và trải nghiệm thực tế ngoài sách vở.</p>
-
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
-      <div style="flex:1;min-width:220px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
-        <strong>🧅 Khám phá</strong>
-        <div style="color:var(--muted);margin-top:8px">Thích du lịch, đi phượt ngắn ngày, khám phá quán cà phê và địa điểm văn hóa.</div>
-      </div>
-
-      <div style="flex:1;min-width:220px;background:var(--card);padding:12px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)">
-        <strong>🧅 Hoạt động xã hội</strong>
-        <div style="color:var(--muted);margin-top:8px">Tham gia các hoạt động cộng đồng, thiện nguyện và dự án nhỏ cùng trường.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOBBIES (tabs) -->
-  <section id="hobbies" class="card" aria-labelledby="hobbies-title">
-    <h2 id="hobbies-title">Sở thích</h2>
-
-    <div class="hobby-tab-wrapper" role="tablist" aria-label="Chọn sở thích">
-      <button class="hobby-btn active" data-target="books" role="tab" aria-selected="true">
-        <svg class="tab-icon" width="18" height="18"><use href="#onion"/></svg> Đọc sách
-      </button>
-      <button class="hobby-btn" data-target="music" role="tab" aria-selected="false">
-        <svg class="tab-icon" width="18" height="18"><use href="#onion"/></svg> Nghe nhạc
-      </button>
-    </div>
-
-    <div id="books" class="hobby-content visible" role="tabpanel">
-      <h3 style="margin-top:10px">Đọc sách</h3>
-      <p class="small-muted">Mình thích đọc, đặc biệt là tiểu thuyết ngôn tình và truyện thiếu nhi.</p>
-
-      <p><strong>Tiểu thuyết ngôn tình đã đọc:</strong></p>
-      <ul class="clean">
-        <li>Sam Sam đến rồi</li>
-        <li>Khó dỗ dành</li>
-        <li>Lê hấp đường phèn</li>
-        <li>Mandarin của tôi</li>
-        <li>Kẹo nổ xoài sầu riêng</li>
-      </ul>
-
-      <p><strong>Truyện con nít yêu thích:</strong></p>
-      <ul class="clean">
-        <li>Vừa nhắm mắt vừa mở cửa sổ</li>
-        <li>Trên đồi mở mắt và mơ</li>
-        <li>Long nhong hẻm nhỏ</li>
-        <li>Trốn lên mái nhà để khóc</li>
+        <li>Ngày sinh: 21/03/2008</li>
+        <li>Cung hoàng đạo: Bạch Dương</li>
+        <li>Địa chỉ: Phường Bến Tre, tỉnh Vĩnh Long</li>
+        <li>Quê ba: Xã Châu Hưng, tỉnh Vĩnh Long</li>
+        <li>Quê mẹ: Xã Phước Long, tỉnh Vĩnh Long</li>
       </ul>
     </div>
+  </div>
+</section>
 
-    <div id="music" class="hobby-content" role="tabpanel" aria-hidden="true">
-      <h3 style="margin-top:12px">Nghe nhạc</h3>
-      <p class="small-muted">Mình nghe đa dạng thể loại — bài nào hay là nghe.</p>
+<!-- ===== HỌC TẬP ===== -->
+<section id="study" class="card">
+  <h2>Học tập</h2>
 
-      <div class="audio-list" style="margin-top:12px">
-        <div class="audio-item">
-          <svg class="audio-onion" width="26" height="26"><use href="#onion"/></svg>
-          <span>Aloha (English Cover)</span>
-          <audio controls preload="none"><source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Aloha%2C%20Cool%20(English%20Cover)%20(1).mp3?raw=true"></audio>
-        </div>
+  <ul class="clean">
+    <li>Mầm non: Mẫu giáo Măng Non</li>
+    <li>Tiểu học: Trường Tiểu học Bến Tre</li>
+    <li>THCS: THCS Thành phố Bến Tre</li>
+    <li>THPT: THPT Chuyên Bến Tre</li>
+  </ul>
 
-        <div class="audio-item">
-          <svg class="audio-onion" width="26" height="26"><use href="#onion"/></svg>
-          <span>Axel F (The Frog Song)</span>
-          <audio controls preload="none"><source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Axel%20F%20(The%20Frog%20Song).mp3?raw=true"></audio>
-        </div>
+  <h3 style="margin-top:12px;">Môn học yêu thích</h3>
+  <p><b>Tiếng Anh</b>: Giúp mình mở rộng kiến thức, giao tiếp và tiếp cận thế giới.</p>
+  <p><b>Toán</b>: Rèn luyện tư duy logic và khả năng phân tích.</p>
+</section>
 
-        <div class="audio-item">
-          <svg class="audio-onion" width="26" height="26"><use href="#onion"/></svg>
-          <span>Phonics song</span>
-          <audio controls preload="none"><source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Phonics%20Song.mp3?raw=true"></audio>
-        </div>
+<!-- ===== TRẢI NGHIỆM ===== -->
+<section id="experience" class="card">
+  <h2>Trải nghiệm</h2>
+  <p>Mình thích khám phá địa điểm mới và tham gia các hoạt động xã hội.</p>
+</section>
+<!-- ===== SỞ THÍCH ===== -->
+<section id="hobbies" class="card">
+  <h2>Sở thích</h2>
 
-        <div class="audio-item">
-          <svg class="audio-onion" width="26" height="26"><use href="#onion"/></svg>
-          <span>No face, No name, No number</span>
-          <audio controls preload="none"><source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/No%20Face%2C%20No%20Name%2C%20No%20Number.mp3?raw=true"></audio>
-        </div>
+  <!-- ==== TAB BUTTONS ==== -->
+  <div class="hobby-tab-wrapper">
+    <button class="hobby-btn active" data-target="books">
+      <svg class="tab-icon" width="26" height="26">
+        <use href="#onion"/>
+      </svg>
+      Đọc sách
+    </button>
+
+    <button class="hobby-btn" data-target="music">
+      <svg class="tab-icon" width="26" height="26">
+        <use href="#onion"/>
+      </svg>
+      Nghe nhạc
+    </button>
+  </div>
+
+  <!-- ==== TAB: BOOKS ==== -->
+  <div id="books" class="hobby-content visible">
+
+    <h3>Đọc sách</h3>
+    <p class="small-muted">
+      Mình yêu thích đọc tiểu thuyết ngôn tình và truyện thiếu nhi. Đọc giúp mình thư giãn và mở rộng góc nhìn.
+    </p>
+
+    <p><b>Tiểu thuyết ngôn tình đã đọc:</b></p>
+    <ul class="clean">
+      <li>Sam Sam đến rồi</li>
+      <li>Khó dỗ dành</li>
+      <li>Lê hấp đường phèn</li>
+      <li>Mandarin của tôi</li>
+      <li>Kẹo nổ xoài sầu riêng</li>
+      <li>...và nhiều tác phẩm khác.</li>
+    </ul>
+
+    <p><b>Truyện con nít yêu thích:</b></p>
+    <ul class="clean">
+      <li>Vừa nhắm mắt vừa mở cửa sổ</li>
+      <li>Trên đồi mở mắt và mơ</li>
+      <li>Long nhong hẻm nhỏ</li>
+      <li>Trốn lên mái nhà để khóc</li>
+    </ul>
+  </div>
+
+  <!-- ==== TAB: MUSIC ==== -->
+  <div id="music" class="hobby-content">
+
+    <h3>Nghe nhạc</h3>
+    <p class="small-muted">Danh sách những bài mình hay nghe nhất.</p>
+
+    <!-- ==== MATCHA MUSIC PLAYER PRO ==== -->
+    <div class="audio-list">
+
+      <!-- SONG 1 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Aloha (English Cover)</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Aloha%2C%20Cool%20(English%20Cover)%20(1).mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 2 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Axel F (The Frog Song)</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Axel%20F%20(The%20Frog%20Song).mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 3 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Phonics Song</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Phonics%20Song.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 4 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>No Face, No Name, No Number</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/No%20Face%2C%20No%20Name%2C%20No%20Number.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 5 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Chilly Cha Cha Cha</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Chilly%20Cha%20Cha.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 6 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>I Like To Move It</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/I%20Like%20to%20Move%20it.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 7 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Người Ôm Pháo Hoa</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Ng%C6%B0%E1%BB%9Di%20%C3%94m%20Ph%C3%A1o%20Hoa.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 8 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Nghi Ngờ</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Nghi-Ngo-Dong-Nhi-Ngo-Kien-Huy.mp3?raw=true">
+        </audio>
+      </div>
+
+      <!-- SONG 9 -->
+      <div class="audio-item">
+        <svg class="audio-onion"><use href="#onion"/></svg>
+        <span>Miền Cát Trắng</span>
+
+        <svg class="song-wave" viewBox="0 0 20 20">
+          <rect x="3" y="5" width="4" height="10" rx="2"/>
+          <rect x="9" y="3" width="4" height="14" rx="2"/>
+          <rect x="15" y="6" width="4" height="8" rx="2"/>
+        </svg>
+
+        <div class="matcha-progress"><div class="matcha-fill"></div></div>
+
+        <audio preload="none">
+          <source src="https://github.com/minhtuvonguyen-collab/Myself.Tutu.io/blob/main/Mien-Cat-Trang-Quang-Vinh.mp3?raw=true">
+        </audio>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===== SVG: ICON CỦ HÀNH ===== -->
+<svg style="display:none;">
+  <symbol id="onion" viewBox="0 0 64 64">
+    <path d="M32 4C22 14 10 24 10 40c0 14 10 22 22 22s22-8 22-22C54 24 42 14 32 4z"
+          fill="#9fce77" stroke="#7cb45a" stroke-width="3"/>
+    <path d="M32 14c-6 6-14 14-14 24 0 10 6 16 14 16s14-6 14-16c0-10-8-18-14-24z"
+          fill="#b9e6a2"/>
+  </symbol>
+</svg>
+
+<!-- ===== LIÊN HỆ ===== -->
+<section id="contact" class="card">
+  <h2>Liên hệ</h2>
+
+  <div class="contact-grid" style="margin-top:14px">
+    <div class="contact-card">
+      <div class="icon">✉️</div>
+      <div>Email: <a href="mailto:minhtuvonguyen@gmail.com">minhtuvonguyen@gmail.com</a></div>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">f</div>
+      <div>Facebook:
+        <a href="https://facebook.com/tu.vo.698353">tu.vo.698353</a>
       </div>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="card" aria-labelledby="contact-title">
-    <h2 id="contact-title">Liên hệ</h2>
-    <p style="color:var(--muted);margin-top:8px">Bạn có thể liên hệ mình qua các kênh bên dưới.</p>
-    <div class="contact-grid" style="margin-top:12px">
-      <div class="contact-card"><div class="icon"><svg width="22" height="22"><use href="#onion"/></svg></div><div><div style="font-weight:700">Email</div><div style="color:var(--muted)"><a href="mailto:minhtuvonguyen@gmail.com">minhtuvonguyen@gmail.com</a></div></div></div>
-      <div class="contact-card"><div class="icon"><svg width="22" height="22"><use href="#onion"/></svg></div><div><div style="font-weight:700">Facebook</div><div style="color:var(--muted)"><a href="https://www.facebook.com/tu.vo.698353/" target="_blank" rel="noopener">facebook.com/tu.vo.698353</a></div></div></div>
-      <div class="contact-card"><div class="icon"><svg width="22" height="22"><use href="#onion"/></svg></div><div><div style="font-weight:700">SĐT</div><div style="color:var(--muted)"><a href="tel:0834502968">0834502968</a></div></div></div>
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <div>SĐT: 0834502968</div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
-<footer class="site-footer" role="contentinfo">
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
   <div>© 2025 — Trang cá nhân của Võ Nguyễn Minh Tú</div>
-  <div><a class="back-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/" target="_blank" rel="noopener">Quay lại trang chính</a></div>
+  <a class="back-btn" href="https://daisubinta.github.io/Nhom4tin12anh.github.io/">
+    ← Quay lại trang chính
+  </a>
 </footer>
 
-<!-- ================= SCRIPTS: behavior, tabs, floating onions ================= -->
+<!-- ================= MATCHA SCRIPT FULL ================ -->
 <script>
-/* ------- Sections & Nav behavior ------- */
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-const mobileMenu = document.getElementById('mobileMenu');
-const hamburger = document.getElementById('hamburger');
+// === HIDE ALL SECTIONS EXCEPT HOME ===
+const sections = document.querySelectorAll("section[id]");
+sections.forEach(sec => { if(sec.id !== "home") sec.style.display = "none"; });
 
-// Show only home on load
-sections.forEach(s => {
-  if (s.id !== 'home') s.style.display = 'none';
-});
+// === NAV MENU SWITCH ===
+const navLinks = document.querySelectorAll(".nav-link");
 
-// desktop nav click
 navLinks.forEach(link => {
-  link.addEventListener('click', e => {
+  link.addEventListener("click", e => {
     e.preventDefault();
-    const id = link.getAttribute('href').slice(1);
+    const id = link.getAttribute("href").replace("#","");
 
-    // active
-    navLinks.forEach(n => n.classList.remove('active'));
-    link.classList.add('active');
+    navLinks.forEach(n => n.classList.remove("active"));
+    link.classList.add("active");
 
-    // show section
-    sections.forEach(sec => sec.style.display = (sec.id === id) ? 'block' : 'none');
+    sections.forEach(sec => {
+      sec.style.display = (sec.id === id) ? "block" : "none";
+    });
 
-    // accessibility
-    const target = document.getElementById(id);
-    if (target) target.focus?.();
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({top:0,behavior:"smooth"});
   });
 });
 
-// mobile menu toggle
-hamburger.addEventListener('click', () => {
-  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-  if (mobileMenu.style.display === 'flex') {
-    mobileMenu.style.flexDirection = 'column';
-    mobileMenu.style.gap = '8px';
-  }
+// === MOBILE MENU ===
+const ham = document.getElementById("hamburger");
+const mob = document.getElementById("mobileMenu");
+
+ham.onclick = () => {
+  mob.style.display = mob.style.display === "flex" ? "none" : "flex";
+};
+
+mob.querySelectorAll("a").forEach(a => {
+  a.onclick = () => {
+    mob.style.display = "none";
+  };
 });
 
-// mobile links behavior
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const id = a.getAttribute('href').slice(1);
-
-    // sync active
-    navLinks.forEach(n => n.classList.remove('active'));
-    const desktopLink = document.querySelector(`.nav-link[href="#${id}"]`);
-    if (desktopLink) desktopLink.classList.add('active');
-
-    sections.forEach(sec => sec.style.display = (sec.id === id) ? 'block' : 'none');
-    mobileMenu.style.display = 'none';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-/* ------- Hobby Tabs (books / music) ------- */
-const hobbyBtns = document.querySelectorAll('.hobby-btn');
-const hobbyContents = document.querySelectorAll('.hobby-content');
+// === HOBBY TABS ===
+const hobbyBtns = document.querySelectorAll(".hobby-btn");
+const hobbyContents = document.querySelectorAll(".hobby-content");
 
 hobbyBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener("click", () => {
+    hobbyBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
     const target = btn.dataset.target;
 
-    // visual active
-    hobbyBtns.forEach(b => {
-      b.classList.remove('active');
-      b.setAttribute('aria-selected', 'false');
-    });
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected', 'true');
-
-    // content toggle with small animation
     hobbyContents.forEach(c => {
-      c.classList.remove('visible');
-      c.style.display = 'none';
-      c.setAttribute('aria-hidden', 'true');
+      if (c.id === target) c.classList.add("visible");
+      else c.classList.remove("visible");
     });
-    const shown = document.getElementById(target);
-    if (shown) {
-      shown.style.display = 'block';
-      shown.setAttribute('aria-hidden', 'false');
-      setTimeout(() => shown.classList.add('visible'), 25);
-    }
   });
 });
 
-/* ------- Stop multiple audios playing ------- */
-document.addEventListener('play', function(e){
-  const audios = document.querySelectorAll('audio');
-  audios.forEach(a => { if (a !== e.target) a.pause(); });
-}, true);
+// === MATCHA MUSIC PLAYER PRO ===
+const audioItems = document.querySelectorAll(".audio-item");
 
-/* ------- Floating onions (SVG instances) ------- */
-const onionRoot = document.getElementById('onion-root');
+audioItems.forEach(item => {
+  const audio = item.querySelector("audio");
+  const progress = item.querySelector(".matcha-fill");
 
-function createOnionSVG(size = 28, side = 'left') {
-  const wrapper = document.createElement('div');
-  wrapper.style.position = 'absolute';
-  wrapper.style.top = '-10vh';
-  // randomize left position with margin
-  const left = Math.random() * (window.innerWidth - 80);
-  wrapper.style.left = `${left}px`;
-  wrapper.style.zIndex = 1;
-  wrapper.style.opacity = (0.6 + Math.random()*0.4).toString();
+  audio.addEventListener("play", () => {
+    audioItems.forEach(i => {
+      if(i !== item){
+        i.classList.remove("playing");
+        i.querySelector("audio").pause();
+      }
+    });
 
-  // insert svg use
-  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-  svg.setAttribute('width', size);
-  svg.setAttribute('height', size);
-  svg.innerHTML = '<use href="#onion"></use>';
-  wrapper.appendChild(svg);
+    item.classList.add("playing");
+  });
 
-  // randomize animation direction and duration
-  const dur = (8 + Math.random()*7).toFixed(2);
-  const delay = (Math.random()*2).toFixed(2);
-  const animName = (Math.random() > 0.5) ? 'fallCurveLeft' : 'fallCurveRight';
-  wrapper.style.animation = `${animName} ${dur}s linear ${delay}s both`;
-  // slight rotation variance
-  wrapper.style.transformOrigin = 'center';
-  onionRoot.appendChild(wrapper);
+  audio.addEventListener("pause", () => {
+    item.classList.remove("playing");
+  });
 
-  // cleanup
-  setTimeout(()=> wrapper.remove(), (parseFloat(dur) + parseFloat(delay)) * 1000 + 300);
-}
-
-// create onion at intervals (controlled)
-let onionTimer = setInterval(() => {
-  // low chance to avoid perf issues on small devices
-  if (window.innerWidth < 600 && Math.random() > 0.5) return;
-  createOnionSVG(18 + Math.random()*28);
-}, 900);
-
-// create a few immediately
-for (let i=0;i<3;i++) setTimeout(()=> createOnionSVG(20 + Math.random()*22), i*400);
-
-/* ------- accessibility: allow nav link activation with Enter ------- */
-document.querySelectorAll('.nav-link').forEach(n => {
-  n.setAttribute('tabindex','0');
-  n.addEventListener('keydown', e => { if (e.key === 'Enter') n.click(); });
-});
-document.querySelectorAll('.hobby-btn').forEach(b => {
-  b.setAttribute('tabindex','0');
-  b.addEventListener('keydown', e => { if (e.key === 'Enter') b.click(); });
+  audio.addEventListener("timeupdate", () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + "%";
+  });
 });
 </script>
+
 </body>
 </html>
