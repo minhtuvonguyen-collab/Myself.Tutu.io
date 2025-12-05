@@ -534,16 +534,27 @@ hobbyBtns.forEach(btn => {
   });
 });
 
-// === MATCHA MUSIC PLAYER PRO ===
+// === MATCHA MUSIC PLAYER PRO — FIXED ===
 const audioItems = document.querySelectorAll(".audio-item");
 
 audioItems.forEach(item => {
   const audio = item.querySelector("audio");
-  const progress = item.querySelector(".matcha-fill");
+  const progressBar = item.querySelector(".matcha-fill");
 
+  // CLICK TO PLAY BY CLICKING ANYWHERE ON ITEM
+  item.addEventListener("click", e => {
+    // Đừng pause khi user đang click vào progress
+    if (e.target.tagName === "AUDIO") return;
+
+    if (audio.paused) audio.play();
+    else audio.pause();
+  });
+
+  // Khi play
   audio.addEventListener("play", () => {
+    // Pause các bài khác
     audioItems.forEach(i => {
-      if(i !== item){
+      if (i !== item) {
         i.classList.remove("playing");
         i.querySelector("audio").pause();
       }
@@ -552,13 +563,17 @@ audioItems.forEach(item => {
     item.classList.add("playing");
   });
 
+  // Khi pause
   audio.addEventListener("pause", () => {
     item.classList.remove("playing");
   });
 
+  // Cập nhật thanh progress
   audio.addEventListener("timeupdate", () => {
-    const percent = (audio.currentTime / audio.duration) * 100;
-    progress.style.width = percent + "%";
+    if (audio.duration > 0) {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = percent + "%";
+    }
   });
 });
 </script>
